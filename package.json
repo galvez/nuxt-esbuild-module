@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-esbuild",
+  "version": "0.0.1",
+  "description": "Nuxt ESBuild module",
+  "license": "MIT",
+  "repository": "galvez/nuxt-esbuild-module",
+  "author": {
+    "name": "Jonas Galvez",
+    "email": "jonasgalvez@gmail.com",
+    "url": "https://hire.jonasgalvez.com.br"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "nuxt",
+    "typescript",
+    "javascript",
+    "esbuild"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "esbuild-loader": "^2.0.1"
+  }
+}
