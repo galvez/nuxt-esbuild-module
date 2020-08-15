@@ -1,4 +1,4 @@
-const { ESBuildPlugin } from 'esbuild-loader'
+const { ESBuildPlugin } = require('esbuild-loader')
 
 const kRegistered = Symbol.for('registered')
 
