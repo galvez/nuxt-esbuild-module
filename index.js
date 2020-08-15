@@ -8,7 +8,7 @@ module.exports = function () {
     if (config.module.rules[jsxRuleIndex][kRegistered]) {
       return
     }
-    config.module.plugins.push(new ESBuildPlugin())
+    config.plugins.push(new ESBuildPlugin())
     config.module.rules.splice(jsxRuleIndex, 1, {
       test: config.module.rules[jsxRuleIndex].test,
       use: [
