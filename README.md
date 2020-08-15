@@ -1,6 +1,7 @@
-# Nuxt ESBuild module
+  # Nuxt ESBuild module
 
-Enables [`esbuild-loader`](https://github.com/egoist/esbuild-loader) to transpile JavaScript and TypeScript in Nuxt.
+Enables [`esbuild-loader`](https://github.com/egoist/esbuild-loader) 
+to transpile **JavaScript** and **TypeScript** in Nuxt.
 
 ## Install
 
@@ -14,6 +15,21 @@ In `nuxt.config.js`:
 modules: [
   'nuxt-esbuild'
 ]
+```
+
+## Enabling TypeScript
+
+In `nuxt.config.js`:
+
+```js
+modules: [
+  'nuxt-esbuild'
+],
+esbuild: {
+  loader: 'ts',
+  // Seems to work alright without tsconfig.json though
+  tsconfig: 'path-to-tsconfig.json',
+},
 ```
 
 ## Notice
