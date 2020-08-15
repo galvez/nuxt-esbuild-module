@@ -1,5 +1,6 @@
 const { ESBuildPlugin } = require('esbuild-loader')
 
+const { assign } = Object
 const kRegistered = Symbol.for('registered')
 
 const defaultOptions = {
