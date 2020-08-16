@@ -20,7 +20,7 @@ npm i nuxt-esbuild --save
 In `nuxt.config.js`:
 
 ```js
-modules: [
+buildModules: [
   'nuxt-esbuild'
 ]
 ```
@@ -35,13 +35,11 @@ modules: [
 ],
 esbuild: {
   loader: 'ts',
-  // Seems to work alright without tsconfig.json though
+  // Optional
   tsconfig: 'path-to-tsconfig.json',
 },
 ```
 
 ## Notice
-
-This is entirely experimental, no guarantees it will work for everyone.
 
 Follow the [esbuild project](https://github.com/evanw/esbuild) for latest info on its reliability and options.
