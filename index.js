@@ -14,9 +14,9 @@ module.exports = function (moduleOptions = {}) {
     if (config.module.rules[jsxRuleIndex][kRegistered]) {
       return
     }
-    config.plugins.push(new ESBuildPlugin())
     const originalUse = config.module.rules[jsxRuleIndex].use
     if (this.options.dev || options.loader === 'ts') {
+      config.plugins.push(new ESBuildPlugin())
       config.module.rules.splice(jsxRuleIndex, 1, {
         test: /\.((m?jsx?)|(ts))$/,
         use: [
