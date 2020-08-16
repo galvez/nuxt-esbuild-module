@@ -9,7 +9,7 @@ to transpile **JavaScript** and **TypeScript** in Nuxt.
 
 - If you do use TypeScript, it'll use esbuild to quickly transpile TypeScript and **additionally still do a final pass with the original Babel settings for production**. In this case it's doing two transpilations, the difference being it uses esbuild-loader instead of the official [ts-loader](https://github.com/TypeStrong/ts-loader), and, in this case, the speed gain is worthwhile.
 
-This is similar to [Vite](https://github.com/vitejs/vite)'s' approach.
+This is similar to [Vite](https://github.com/vitejs/vite)'s approach.
 
 ## Install
 
