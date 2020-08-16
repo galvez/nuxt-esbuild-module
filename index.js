@@ -8,24 +8,27 @@ const defaultOptions = {
 }
 
 module.exports = function (moduleOptions = {}) {
-  if (!this.options.dev) {
-    return
-  }
+  const options = assign({}, defaultOptions, this.options.esbuild || {}, moduleOptions)
   this.extendBuild((config) => {
     const jsxRuleIndex = config.module.rules.findIndex(r => '.jsx'.match(r.test))
     if (config.module.rules[jsxRuleIndex][kRegistered]) {
       return
     }
     config.plugins.push(new ESBuildPlugin())
-    config.module.rules.splice(jsxRuleIndex, 1, {
-      test: /\.((jsx?)|(ts))$/,
-      use: [
-        {
-          loader: 'esbuild-loader',
-          options: assign(defaultOptions, this.options.esbuild || {}, moduleOptions)
-        }
-      ]
-    })
+    if (this.options.dev || options.loader === 'ts') {
+      config.module.rules.splice(jsxRuleIndex, 1, {
+        test: /\.((m?jsx?)|(ts))$/,
+        use: [
+          {
+            loader: 'esbuild-loader',
+            options
+          },
+        ]
+      })
+    }
+    if (!this.options.dev) {
+      config.module.rules[jsxRuleIndex].use.push(...config.module.rules[jsxRuleIndex].use)
+    }
     config.module.rules[jsxRuleIndex][kRegistered] = true
   })
 }

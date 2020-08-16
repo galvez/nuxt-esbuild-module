@@ -1,6 +1,6 @@
 {
   "name": "nuxt-esbuild",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Nuxt ESBuild module",
   "license": "MIT",
   "repository": "galvez/nuxt-esbuild-module",

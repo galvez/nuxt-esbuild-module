@@ -3,7 +3,9 @@
 Enables [`esbuild-loader`](https://github.com/egoist/esbuild-loader) 
 to transpile **JavaScript** and **TypeScript** in Nuxt.
 
-**This is for speeding up development-only**.
+If you don't use TypeScript, **it's only enabled for dev**, effectively giving you a modern build to develop with, but will only pass through Babel when building for production (doesn't make sense to run it two transpilations in this case).
+
+If you do use TypeScript, it'll use esbuild to quickly transpile TypeScript and **still do a final pass with original Babel settings for production**.
 
 When building for production, original Babel settings are used.
 
