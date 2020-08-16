@@ -15,6 +15,7 @@ module.exports = function (moduleOptions = {}) {
       return
     }
     config.plugins.push(new ESBuildPlugin())
+    const originalUse = config.module.rules[jsxRuleIndex].use
     if (this.options.dev || options.loader === 'ts') {
       config.module.rules.splice(jsxRuleIndex, 1, {
         test: /\.((m?jsx?)|(ts))$/,
@@ -26,8 +27,8 @@ module.exports = function (moduleOptions = {}) {
         ]
       })
     }
-    if (!this.options.dev) {
-      config.module.rules[jsxRuleIndex].use.push(...config.module.rules[jsxRuleIndex].use)
+    if (!this.options.dev && options.loader === 'ts') {
+      config.module.rules[jsxRuleIndex].use.push(...originalUse)
     }
     config.module.rules[jsxRuleIndex][kRegistered] = true
   })
