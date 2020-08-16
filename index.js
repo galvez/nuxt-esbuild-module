@@ -8,6 +8,9 @@ const defaultOptions = {
 }
 
 module.exports = function (moduleOptions = {}) {
+  if (!this.options.dev) {
+    return
+  }
   this.extendBuild((config) => {
     const jsxRuleIndex = config.module.rules.findIndex(r => '.jsx'.match(r.test))
     if (config.module.rules[jsxRuleIndex][kRegistered]) {

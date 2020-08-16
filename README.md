@@ -3,6 +3,10 @@
 Enables [`esbuild-loader`](https://github.com/egoist/esbuild-loader) 
 to transpile **JavaScript** and **TypeScript** in Nuxt.
 
+**This is for speeding up development-only**.
+
+When building for production, original Babel settings are used.
+
 ## Install
 
 ```sh
