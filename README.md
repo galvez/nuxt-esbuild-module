@@ -1,4 +1,4 @@
-  # Nuxt ESBuild module
+# Nuxt ESBuild module
 
 Enables [`esbuild-loader`](https://github.com/egoist/esbuild-loader) 
 to transpile **JavaScript** and **TypeScript** in Nuxt.
