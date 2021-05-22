@@ -1,6 +1,5 @@
-const { ESBuildPlugin } = require('esbuild-loader')
-
 const { assign } = Object
+
 const kRegistered = Symbol.for('registered')
 
 const defaultOptions = {
@@ -16,7 +15,6 @@ module.exports = function (moduleOptions = {}) {
     }
     const originalUse = config.module.rules[jsxRuleIndex].use
     if (this.options.dev || options.loader === 'ts') {
-      config.plugins.push(new ESBuildPlugin())
       config.module.rules.splice(jsxRuleIndex, 1, {
         test: /\.((m?jsx?)|(ts))$/,
         use: [
